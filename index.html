@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>калькулятор</title>
+</head>
+
+<style>
+     body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.calculator {
+    text-align: center;
+    border-radius: 8px;
+}
+
+input {
+    width: 150px;
+    margin: 10px;
+    padding: 5px;
+    
+}
+
+button {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    margin: 5px;
+}
+.operator{
+    background-color: #f08080;
+}
+
+</style>
+
+<body>
+    <div class="calculator">
+        <input  type="text" id="display">
+<br>
+        <button onclick="addDisplay('1')">1</button>
+        <button onclick="addDisplay('2')">2</button>
+        <button onclick="addDisplay('3')">3</button>
+        <button class="operator" onclick="addDisplay('+')">+</button>
+        <br>
+        <button onclick="addDisplay('4')">4</button>
+        <button onclick="addDisplay('5')">5</button>
+        <button onclick="addDisplay('6')">6</button>
+        <button class="operator" onclick="addDisplay('-')">-</button>
+        <br>
+        <button onclick="addDisplay('7')">7</button>
+        <button onclick="addDisplay('8')">8</button>
+        <button onclick="addDisplay('9')">9</button>
+        <button class="operator" onclick="addDisplay('*')">*</button>
+        <br>
+        <button onclick="addDisplay('0')">0</button>
+        <button class="operator" onclick="udalit()">C</button>
+        <button class="operator" onclick="ravno()">=</button>
+        <button class="operator" onclick="addDisplay('/')">/</button>
+        <br>
+    </div>
+<script>
+    let display = document.getElementById("display")
+
+    function addDisplay(value){
+        display.value = display.value + value
+    }
+
+    function ravno(){
+        try{
+            display.value = eval(display.value)
+        }
+        catch{
+            display.value = 'ОШИБКА'
+        }
+    }
+
+    function udalit(){
+        display.value = ''
+    }
+
+
+</script>
+
+</body>
+</html>
